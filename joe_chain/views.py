@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-import pudb
 
 # Create your views here.
 def index(request):
