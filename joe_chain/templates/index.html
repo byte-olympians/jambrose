@@ -18,17 +18,19 @@
   <form class="col s12" action="/write/" method="POST">
     {% csrf_token %}
     <div class="row">
-      <div class="input-field col s6">
-        <div class="input-field col s6">
-        <input id="read_write" type="text" class="validate" name="read_write">
-        <label for="read_write">read/write?</label>
+      <div class="api-form input-field col s12">
+        <select name='selector'>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Read</option>
+          <option value="2">Write</option>
+        </select>
+        <label>Function</label>
       </div>
-      </div>
-      <div class="input-field col s6">
+      <div class="input-field col s6" id="form-1">
         <input id="user_1" type="text" class="validate" name="user_1">
         <label for="user_1">User 1</label>
       </div>
-      <div class="input-field col s6">
+      <div class="input-field col s6" id="form-2">
         <input id="user_2" type="text" class="validate" name="user_2">
         <label for="user_2">User 2</label>
       </div>
