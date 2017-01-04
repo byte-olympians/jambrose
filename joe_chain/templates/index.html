@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joe Chain</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'scripts/scripts.js' %}"></script>
+          
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Joe Chain</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">About</a></li>
+        <li><a href="badges.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <h1>Hello, world!</h1>
+      <h4>I don't quite understand what it does.</h4>
+      <p>
+        {{ user_1 }}
+      </p>
+      <p>
+        {{ user_2 }}
+      </p>
+      <p>
+        {{ func }}
+      </p>
+    </div>
+    <div class="row">
+      <form class="col s12" action="/write/" method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="input-field col s6">
+            <div class="input-field col s6">
+            <input id="read_write" type="text" class="validate" name="read_write">
+            <label for="read_write">read/write?</label>
+          </div>
+          </div>
+          <div class="input-field col s6">
+            <input id="user_1" type="text" class="validate" name="user_1">
+            <label for="user_1">User 1</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="user_2" type="text" class="validate" name="user_2">
+            <label for="user_2">User 2</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+  </div>
+</body>
+</html>
